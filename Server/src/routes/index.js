@@ -1,8 +1,10 @@
 import { Router } from "express";
 import getGameRouter from "./getGameRoute.js"
-import twilioRouter from "./twilioRoutes.js";
+// import twilioRouter from "./twilioRoutes.js";
 import deleteUserRouter from "./deleteUserRouter.js"
 import { router as userRouter } from "./userRoutes.js"
+import twilio from "twilio";
+import { envs } from "../config/enviroments/enviroments.js";
 
 const router = Router();
 
