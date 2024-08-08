@@ -1,6 +1,6 @@
 import express from "express";
 import { registerUserHandler } from "../handlers/userHandler.js";
-import { authHandler } from "../handlers/authhandler.js";
+import { authHandler } from "../handlers/authHandler.js";
 import recoveryPasswordHandler from "../handlers/postPasswordRecoveryHandler.js";
 import {
   findOneUser,
