@@ -7,7 +7,34 @@ import { router as userRouter } from "./userRoutes.js"
 const router = Router();
 
 router.use("/getGame", getGameRouter);
-router.use("/verifyuser", twilioRouter);
+router.use("/verifyuser/sendOTP/:phoneNumber", async (phoneNumber) => {
+
+    console.log("Phone number", phoneNumber);
+     
+    console.log(
+      "Datos Twilio:",
+      envs.ACCOUNTSID,
+      envs.AUTHTOKEN,
+      envs.SERVICESID
+    );
+    try {
+  
+          const client = new twilio(envs.ACCOUNTSID, envs.AUTHTOKEN);
+      
+      const { status } = await client.verify.v2
+        .services(envs.SERVICESID)
+        .verifications.create({
+          to: phoneNumber,
+          channel: "sms",
+        });
+     
+      console.log('sTATUS:', status)
+  
+      return status;
+    } catch (error) {
+      return error;
+    }
+  });
 router.use("/deleteAccount", deleteUserRouter);
 router.use("/users", userRouter)
 router.use("/", (req, res)=>{res.send("Server is running.")} )
