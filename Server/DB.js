@@ -1,6 +1,6 @@
 import { Sequelize } from "sequelize";
 import { envs } from "./src/config/enviroments/enviroments.js";
-
+import pg from 'pg';
 
 const sequelize = new Sequelize(envs.DB_URI, {
   logging: false,
@@ -11,6 +11,7 @@ const sequelize = new Sequelize(envs.DB_URI, {
       rejectUnauthorized: false, // Esto puede ser necesario si estás usando certificados autofirmados
     },
   } : {},
+  dialectModule: pg,
 });
 
 const models = {
