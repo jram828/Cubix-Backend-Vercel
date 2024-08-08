@@ -10,7 +10,7 @@ router.use("/getGame", getGameRouter);
 router.use("/verifyuser", twilioRouter);
 router.use("/deleteAccount", deleteUserRouter);
 router.use("/users", userRouter)
-router.use("/", (req, res)=>{res.send("Server is running.")} )
+// router.use("/", (req, res)=>{res.send("Server is running.")} )
 
 
 export default router
