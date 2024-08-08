@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize";
 import { envs } from "./src/config/enviroments/enviroments.js";
 import pg from 'pg';
 
+console.log(envs.DB_URI);
 const sequelize = new Sequelize(envs.DB_URI, {
   logging: false,
   native: false,
