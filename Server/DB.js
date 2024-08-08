@@ -15,7 +15,6 @@ const sequelize = new Sequelize(envs.DB_URI, {
   dialectModule: pg,
 });
 
-
 const models = {
   ...sequelize.models,
   conn: sequelize,
