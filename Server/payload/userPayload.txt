@@ -1,0 +1,89 @@
+// Endpoint + '/users/register
+//Crea el user en el software de habanero con los requerimientos minimos, y a su vez los crea en la base de datos local.
+//Con propiedades opcional que considire adecuadas guardarlas.
+
+//cuando el body se envia vacio.
+
+body: {}
+
+response:
+{
+	"status": "Error",
+	"message": [
+		"Username is required.",
+		"Emails is required.",
+		"Password is required.",
+		"Date of birth is required.",
+		"Phone number is required."
+	]
+}
+
+//cuando el body tiene mal escrito el password
+
+body: {}
+
+{
+	"status": "Error",
+	"message": [
+		"Username is required.",
+		"Emails is required.",
+		"Password must be at least 8 characters",
+		"Password must have at least one uppercase letter",
+		"Password must have at least one number",
+		"Password must have at least one special character(@, $, !, %, *, ?, &)",
+		"Date of birth is required.",
+		"Phone number is required."
+	]
+}
+
+
+
+//cuando el body va en perfectas condiciones
+
+body: 
+{
+	"password":"Kevin123!",
+	"username":"KevinJB",
+	"email":"KevinJB@gmail.com",
+	"birthdate":"1999-11-22",
+	"phoneNumber":2123123
+}
+
+	//respuesta: 
+
+{
+	"localUser": {
+		"id": 7,
+		"username": "KevinJB",
+		"email": "KevinJB@gmail.com",
+		"birthdate": "1999-11-22",
+		"phoneNumber": "2123123"
+	},
+	"habaneroResponse": {
+		"success": true,
+		"message": "User created correctly in Habanero",
+		"habaneroData": {
+			"Authenticated": true,
+			"PlayerId": "27afe3ee-9a4e-ef11-bdfd-6045bd57b554",
+			"BrandId": "c9eb1502-703e-ef11-991a-002248eb2b00",
+			"BrandName": "Cubix Casino & Bets",
+			"Token": "pf-28148638d9ce3fbf4bf54484868ba9182a3d8dc2zwgxu",
+			"RealBalance": 0,
+			"CurrencyCode": "EUR",
+			"PlayerCreated": true,
+			"HasBonus": false,
+			"BonusBalance": 0,
+			"BonusSpins": 0,
+			"BonusGameId": 0,
+			"BonusPercentage": 0,
+			"BonusWagerRemaining": 0,
+			"CurrencySymbol": "€",
+			"PointBalance": 0
+		}
+	}
+}
+
+
+//Route Endpoint + '/users/validate-user
+// valida si el Email y el pasword corresponde a un usuario existente
+// a su vez pasan por una validacion de tipado extricto. 

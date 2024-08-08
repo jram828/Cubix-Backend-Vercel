@@ -1,0 +1,100 @@
+.card-container {
+  display: flex;
+  justify-content: space-around; /* Ajusta el espacio entre las tarjetas */
+  gap: 16px; /* Espacio entre cada tarjeta */
+  padding: 16px; /* Espacio alrededor del contenedor */
+  width: 100%;
+}
+
+.custom-card,
+.custom-card-slot,
+.custom-card-best {
+  border-radius: 10px; /* Añadido borde redondeado para un mejor aspecto */
+  padding: 16px;
+  border: none;
+  position: relative; /* Para permitir el uso de overflow */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  height: 130px;
+}
+
+.custom-card {
+  background: linear-gradient(60.14deg, #5f42aa 0.02%, #ff40a0 99.99%);
+}
+
+.custom-card-slot {
+  background: linear-gradient(60.15deg, #3f56f0 -0.01%, #00efa9 100%);
+}
+
+.custom-card-best {
+  background: linear-gradient(60.16deg, #ff428d 0%, #ffae46 100%);
+}
+
+.Casino-container {
+  display: inline-block; /* Para que el contenedor se ajuste al contenido */
+  padding: 4px 8px; /* Ajusta el relleno */
+  border-radius: 16px;
+  background: #ffde5933;
+  box-shadow: 0px 2px 10px 0px #0000001a;
+}
+
+.Casino {
+  margin: 0; /* Elimina el margen */
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22.4px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.card-content {
+  margin: 0;
+  font-size: 14px;
+}
+
+.group-image {
+  width: 140px;
+  height: 146.51px;
+  position: absolute;
+  top: -30px;
+  right: -20px;
+  z-index: 10;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .Casino-container {
+    position: relative;
+    right: 25px;
+  }
+  .group-image {
+    width: 60px;
+    height: 60px;
+    top: -15px;
+    right: 10px;
+    z-index: 1;
+  }
+  .custom-card {
+    padding: 15px;
+  }
+  .Casino-container {
+    display: inline-block; /* Para que el contenedor se ajuste al contenido */
+    padding: 0; /* Ajusta el relleno */
+  }
+
+  .custom-card {
+    width: 100px;
+    height: 100px;
+  }
+
+  .custom-card-slot {
+    width: 100px;
+    height: 100px;
+  }
+
+  .custom-card-best {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+}

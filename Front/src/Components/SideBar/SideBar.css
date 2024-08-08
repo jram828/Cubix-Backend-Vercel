@@ -1,0 +1,142 @@
+/* Estilos generales del sidebar */
+.sidebar-container {
+  display: flex; /* Añadir esta propiedad para hacer flex al contenedor del sidebar */
+}
+
+.content {
+  flex: 1; /* Asegura que el contenido tome todo el espacio disponible */
+}
+
+.sidebar-custom {
+  background-color: #20242a;
+  box-shadow: 10px 0px 30px 0px #00000080;
+  transition: width 0.3s ease;
+  position: sticky;
+
+  top: 0;
+  height: 100vh;
+  padding-inline: 10px;
+  flex-shrink: 0; /* Evita que el sidebar se reduzca de tamaño */
+}
+
+/* Estilo cuando el sidebar está visible en móviles */
+.sidebar-mobile-visible {
+  transform: translateX(0); /* Muestra el sidebar cuando está visible */
+}
+
+/* Estilos del contenido del sidebar */
+.sidebar-content {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.sidebar-content.collapsed {
+  width: 50px;
+}
+
+/* Estilos del botón para desplegar el sidebar */
+.sidebar-toggle-button {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 15px);
+  transform: translateY(-50%);
+  transition: left 0.3s ease;
+  background-color: #9b9b9b;
+  color: #000;
+  border-radius: 50%;
+  box-shadow: 10px 0px 30px 0px #00000080;
+}
+
+/* Estilos del botón interno */
+.sidebar-toggle-button-inner {
+  background-color: #9b9b9b;
+  color: #000;
+  border-radius: 50%;
+  box-shadow: 10px 0px 30px 0px #00000080;
+}
+
+.sidebar-toggle-button-inner:hover {
+  background-color: #9b9b9b !important;
+}
+
+/* Estilo del menú */
+.menu-custom {
+  background-color: #20242a;
+}
+
+.menu-custom .ant-menu-item {
+  color: #ffffff;
+}
+
+.menu-custom .ant-menu-item:hover {
+  cursor: pointer !important;
+}
+
+.menu-custom .ant-menu-item-selected {
+  background-color: #ffde59 !important;
+  color: #000000 !important;
+  font-weight: bold;
+}
+
+/* Estilo de las líneas divisorias */
+.menu-divider {
+  margin: 16px auto;
+  background-color: rgb(87, 87, 87);
+}
+
+/* Ocultar las líneas divisorias cuando el sidebar está oculto o deslogueado */
+.menu-custom.no-divider .menu-divider {
+  display: none;
+}
+
+/* Ocultar íconos y texto cuando el sidebar está colapsado */
+.sidebar-content.collapsed .menu-custom .ant-menu-item {
+  font-size: 0;
+}
+
+.sidebar-content.collapsed .menu-custom .ant-menu-item-selected {
+  background-color: transparent !important;
+  color: transparent !important;
+}
+
+.sidebar-content.collapsed .menu-custom .ant-menu-item .ant-menu-item-icon {
+  display: none;
+}
+
+.sidebar-content.collapsed .menu-custom .ant-menu-item {
+  pointer-events: none;
+}
+
+/* Estilos para el sidebar en dispositivos móviles */
+@media (max-width: 768px) {
+  .sidebar-custom {
+    position: fixed;
+    transform: translateX(-100%); /* Oculta el sidebar por defecto */
+    transition: transform 0.3s ease;
+    width: 250px;
+    padding-top: 50px;
+    z-index: 10;
+  }
+
+  .sidebar-custom.sidebar-mobile-visible {
+    transform: translateX(0); /* Muestra el sidebar cuando está visible */
+  }
+
+  .sidebar-content {
+    width: 100%; /* Ancho completo en móvil */
+  }
+
+  .sidebar-content.collapsed {
+    width: 0; /* Ocultar el contenido cuando está colapsado en móvil */
+  }
+
+  .sidebar-toggle-button {
+    right: 10px; /* Coloca el botón con un margen de la derecha */
+    top: 50%; /* Centra el botón verticalmente */
+    transform: translateY(-50%);
+  }
+}

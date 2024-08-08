@@ -1,0 +1,63 @@
+.bets-container {
+  padding: 20px;
+  color: white;
+  background-color: #181c20;
+}
+
+.bets-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.bet-icon {
+  width: 30px; /* Ajusta el tamaño del icono según sea necesario */
+  height: auto; /* Ajusta el tamaño del icono según sea necesario */
+  margin-right: 10px; /* Espacio entre el icono y el texto "Bets" */
+}
+
+.page-btn {
+  margin: 10px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.page-number {
+  padding: 10px;
+  border-radius: 20%;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+}
+
+.page-number.current {
+  background-color: #ffde59;
+  color: black;
+}
+
+.page-btn.active .page-number {
+  background-color: #ffde59;
+  color: black;
+}
+
+.page-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Tres columnas en dispositivos móviles */
+  }
+
+  .game-img {
+    width: 100%; /* Hace que las imágenes ocupen todo el ancho en dispositivos pequeños */
+    margin-right: 0; /* Elimina el margen derecho en dispositivos pequeños */
+  }
+}

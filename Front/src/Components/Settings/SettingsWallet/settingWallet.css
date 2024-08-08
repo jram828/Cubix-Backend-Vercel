@@ -1,0 +1,35 @@
+
+ .wallet-button {
+    width: 200px;
+    height: 100%;
+    background-color: transparent;
+    color: #BFBFBF;
+    border: none;
+ }
+
+ .wallet-button-selected{
+    background-color: #556171;
+    color: white;
+ }
+
+ .no-hover:hover {
+    background-color: transparent !important;
+    color: #BFBFBF !important;
+    border: none;
+  }
+
+  .wallet-button:focus,
+  .wallet-button:active {
+    background-color: transparent !important;
+    border: none;
+    outline: none;
+    
+  }
+  
+  .wallet-button-selected:focus,
+  .wallet-button-selected:active {
+    background-color: #556171 !important;
+    border: none;
+    outline: none;
+   
+  }

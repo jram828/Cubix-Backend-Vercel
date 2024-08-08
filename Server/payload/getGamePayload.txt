@@ -1,0 +1,15 @@
+const getGamePayload = {
+  brandId: "c9eb1502-703e-ef11-991a-002248eb2b00",
+  brandgameId: "5c7f30c9-d7ab-48f0-b848-aea24d1d46b6",
+  token: "VBvBXNXhW26opsr4dWiWE", // Player Token. If the token is blank, fun mode will be forced.
+  mode: "real", //It could be fun or real
+  locale: "en", //en,zh-CN, ja, fr, ...
+  lobbyUrl: "https://transfer-test.insvr.com/listgames",
+  launchUrl: "https://app-test.insvr.com/play", 
+};
+
+const URL = `${launchUrl}?brandid=${brandId}&brandgameid=${brandgameId}&token=${token}&mode=${mode}&locale=${locale}&lobbyurl=${lobbyUrl}`;
+
+EXAMPLE OF REQUEST:
+
+https://app-test.insvr.com/play?brandid=c9eb1502-703e-ef11-991a-002248eb2b00&brandgameid=5c7f30c9-d7ab-48f0-b848-aea24d1d46b6&token=&mode=fun&locale=en&lobbyurl=https://transfer-test.insvr.com/listgames

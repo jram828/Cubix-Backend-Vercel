@@ -1,0 +1,32 @@
+To verify users, there are two endpoints:
+
+Send OTP: 
+
+It sends a 6 digits OTP to the player's phone number
+
+https://cubix.onrender.com/verifyuser/sendOTP/{phoneNumber}
+
+Answer: 
+
+"pending"
+
+Verify OTP: 
+
+It verifies the code by sending it back to Twilio:
+
+https://cubix.onrender.com/verifyuser/verifyOTP
+
+{"phoneNumber":"+543152316006", "OTP":"425094"}
+
+Answer: 
+
+If the OTP is correct:
+
+"approved" 
+
+If the OTP is incorrect
+{
+    "status": 404,
+    "code": 20404,
+    "moreInfo": "https://www.twilio.com/docs/errors/20404"
+}

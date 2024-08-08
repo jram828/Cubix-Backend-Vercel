@@ -1,0 +1,42 @@
+.custom-carousel .slick-prev,
+.custom-carousel .slick-next {
+  padding: 11px;
+  border: 3px solid white;
+  border-radius: 20%;
+  position: absolute;
+  top: -20px;
+  color: white;
+}
+
+.custom-carousel .slick-prev {
+  left: 96%;
+  text-align: center;
+  transform: translateX(-100%);
+}
+
+.custom-carousel .slick-next {
+  left: 97%;
+  transform: translateX(0%);
+}
+
+.custom-carousel .slick-slide {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .custom-carousel .slick-list {
+    white-space: nowrap;
+  }
+
+  .custom-carousel .slick-prev {
+    left: 84%;
+    top: -30%;
+    transform: translateX(-100%);
+  }
+
+  .custom-carousel .slick-next {
+    left: 85%;
+    transform: translateX(0%);
+    top: -30%;
+  }
+}

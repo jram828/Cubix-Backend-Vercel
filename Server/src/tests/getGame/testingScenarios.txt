@@ -1,0 +1,49 @@
+https://app-test.insvr.com/play?brandid=c9eb1502-703e-ef11-991a-002248eb2b00&brandgameid=5c7f30c9-d7ab-48f0-b848-aea24d1d46b6&token=&mode=fun&locale=en&lobbyurl=https://transfer-test.insvr.com/listgames
+
+
+Launching game: 
+
+To launch a game the following URL is used:
+
+`${launchUrl}?brandid=${brandId}&brandgameid=${brandgameId}&token=${token}&mode=${mode}&locale=${locale}&lobbyurl=${lobbyUrl}`
+
+Testing Scenario 1: If all of the parameters are correct, access to the game is granted.
+
+
+
+Testing Scenario 2:
+
+Missing or mistake in brand id: 
+
+`${launchUrl}?brandid=$&brandgameid=${brandgameId}&token=${token}&mode=${mode}&locale=${locale}&lobbyurl=${lobbyUrl}`
+
+A website rendering the following text is returned: 
+
+Brandgameid {{brandgameid}} not found in brandid dc41d953-6a76-e711-80de-000d3a802d1d. Check that you are in the correct brand - brandgameids are unique per brand. [app-test.insvr.com]
+
+
+
+Testing Scenario 3:
+
+Missing brandgame id: 
+
+`${launchUrl}?brandid=${brandId}&brandgameid=&token=${token}&mode=${mode}&locale=${locale}&lobbyurl=${lobbyUrl}`
+
+A website rendering the following text is returned: 
+
+Keyname not specified. Cannot be empty. [app-test.insvr.com]
+
+
+Testing Scenario 4:
+
+Mistake in brandgame id:
+
+https://app-test.insvr.com/play?brandid=c9eb1502-703e-ef11-991a-002248eb2b00&brandgameid=665f30c9-d7ab-48f0-b848-aea24d1d46b6&token=&mode=fun&locale=en&lobbyurl=https://transfer-test.insvr.com/listgames
+
+A website rendering the following text is returned: 
+
+Brandgameid 665f30c9-d7ab-48f0-b848-aea24d1d46b6 not found in brandid c9eb1502-703e-ef11-991a-002248eb2b00. Check that you are in the correct brand - brandgameids are unique per brand.[app-test.insvr.com]
+
+Testing Scenario 5:
+
+If Token, Mode, Locale or Lobby Url parameters are missing, access to to game is granted in ENGLISH, using mode FUN

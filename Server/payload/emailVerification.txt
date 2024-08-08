@@ -1,0 +1,26 @@
+To verify the user's email, the endpoint to be used is:
+
+https://cubix.onrender.com/users/verify-email
+
+The request body must be:
+
+{"username":"Carlos1",
+"email":"carlos13@yahoo.com",
+"redirectUrl":"https://www.cubix.com/emailverified"}
+
+Answers:
+
+If data is complete:
+
+"Email was sent succesfully"
+
+If there is incomplete data or any mistake:
+
+{
+  status: error,
+  message: [
+   Email must be in a valid format,      // Error messages depending of the wrong argument
+   Redirect URL must be in a valid format,
+   Username must be at least 3 characters
+  ]
+}

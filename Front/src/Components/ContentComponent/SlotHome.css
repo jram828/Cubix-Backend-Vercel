@@ -1,0 +1,83 @@
+.custom-container {
+  display: flex;
+  background-color: #181c20;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+ 
+}
+
+.left-section {
+  flex: 1;
+  text-align: center;
+  color: white;
+}
+
+.content-home {
+  background-image: url("../../assets/FallingCoins.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  align-items: center;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+  max-width: 522.42px; /* Ancho máximo para la imagen */
+  width: 100%;
+  position: relative; /* Necesario para el pseudo-elemento */
+}
+
+.coins-image {
+  width: 100%;
+  height: auto;
+  mask-image: linear-gradient(
+    black 50%,
+    transparent
+  ); /* Máscara para la imagen */
+}
+
+/* Estilos para los textos y el botón */
+.Welcome {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  text-align: left;
+  color: white;
+}
+
+.Cubix {
+  color: var(--Tertiary-Tertiary06, #ffde59);
+}
+
+.parrafo {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  text-align: left;
+  color: white;
+}
+
+.Boton {
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #ffde59;
+  color: black;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .right-section {
+    margin-top: 20px; /* Espacio superior para separar las secciones */
+  }
+
+  .coins-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
